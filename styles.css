@@ -53,6 +53,51 @@ header{
     border-bottom: 1px solid var(--border-color);
 }
 
+.light-mode{
+    --primary-color: #E3735E;
+    --dark-bg: #E6E6FA; 
+    --darker-bg: #F9F6EE;
+    --light-text: #23282b;
+    --gray-text: #5d9b9b;
+    --card-bg: #f1e1b0;
+    --border-color: #F9F6EE;
+    --transition: all .3s ease;
+}
+
+.light-mode header{
+    background-color: rgb(226, 216, 201, 0.9);
+    backdrop-filter: blur(10px);
+}
+
+.light-mode .btn:hover{
+    background-color: var(--card-bg);
+    color: var(--light-text);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(226, 216, 201, 0.3);
+}
+
+.light-mode .hero-image img{
+    box-shadow: 0 0 25px rgba(227, 83, 54, .5);
+    border: 5px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.light-mode .hero-image img:hover{
+    transform: sacel(1.03);
+    box-shadow: 0 0 30px rgba(227, 83, 54, .5);
+}
+
+.light-mode .project-card:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 0 30px rgba(241, 176, 176, .5);
+}
+
+.light-mode .date{
+    background-color: rgba(227, 115, 94, 0.2);
+    color: #23282b;
+}
+
+
 #navbar{
     display: flex;
     justify-content: space-between;
@@ -100,6 +145,17 @@ header{
 
 .nav-links a:hover::after{
     width: 100%;
+}
+
+#toggle{
+    display: none;
+}
+
+#labelToggle{
+    padding: 1rem 5%;
+    font-size: 1.5rem;
+    color: rebeccapurple;
+    cursor: pointer;
 }
 
 section{
@@ -403,7 +459,7 @@ section{
     color: var(--primary-color);
 }
 
-.contacto-container{
+.contact-container{
     background-color: var(--card-bg);
     max-width: 450px;
     border-radius: 10px;
@@ -414,7 +470,7 @@ section{
     grid-auto-columns: 100%;
 }
 
-.contacto-input{
+.contact-input{
     font-family: inherit;
     font-size: 1rem;
     padding: .8em 1em;
@@ -424,13 +480,13 @@ section{
     border-radius: 10px;
 }
 
-.contacto-input-message{
+.contact-input-message{
     resize: none;
     padding: 1.8em 1em;
     margin-bottom: .5em;
 }
 
-.contacto-cta{
+.contact-cta{
     font-family: inherit;
     font-size: 1rem;
     background-color: var(--primary-color);

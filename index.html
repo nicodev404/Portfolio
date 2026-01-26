@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/dd6b71da10.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
-<body>
+<body class="light-mode">
     <header>
         <nav id="navbar">          
             <div class="logo">nico<span>Dev</span></div>             
@@ -17,6 +17,10 @@
                 <li><a href="#proyectos">Proyectos</a></li>
                 <li><a href="#formacion">Formación</a></li>
             </ul>
+            <label for="toggle" id="labelToggle"><i class="fa-solid fa-moon"></i></label>
+            <input type="checkbox" id="toggle">
+            <script src="script.js"></script>
+            </div>
         </nav>
     </header>
     
@@ -36,7 +40,7 @@
                         <a href="#contacto" class="btn">Contáctame</a>
                 </div>
                 <div class="hero-image">
-                    <img src="nicoDev404pfp.png" alt="profile image">
+                    <img src="images/nicoDev404pfp.png" alt="profile image">
                 </div>
             </div>
         </section>
@@ -46,7 +50,7 @@
             <div class="projects-container">
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="project1.png" alt="project image">
+                        <img src="images/project1.png" alt="project image">
                     </div>
                     <div class="project-info">
                         <h3>Catálogo Web</h3>
@@ -68,7 +72,7 @@
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="project2.png" alt="project image">
+                        <img src="images/project2.png" alt="project image">
                     </div>
                     <div class="project-info">
                         <h3>Catálogo (app de escritorio)</h3>
@@ -177,12 +181,12 @@
 
         <section id="contacto" class="contacto" action="https://formspree.io/f/mlgjwvkn" method="POST">
             <h2 class="section-title">Contáctame</h2>
-            <div class="contacto-container">
-                <input type="text" class="contacto-input" placeholder="Nombre" name="name">
-                <input type="email" class="contacto-input" placeholder="Email" name="email">
-                <textarea class="contacto-input contacto-input-message" placeholder="Mensaje" name="message"></textarea> 
+            <div class="contact-container">
+                <input type="text" class="contact-input" placeholder="Nombre" name="name">
+                <input type="email" class="contact-input" placeholder="Email" name="email">
+                <textarea class="contact-input contact-input-message" placeholder="Mensaje" name="message"></textarea> 
 
-                <input type="submit" value="enviar" class="contacto-cta">
+                <input type="submit" value="enviar" class="contact-cta">
             </div>
         </section>
 
