@@ -147,6 +147,12 @@ header{
     width: 100%;
 }
 
+.container-tools{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 #toggle{
     display: none;
 }
@@ -155,6 +161,16 @@ header{
     padding: 1rem 5%;
     font-size: 1.5rem;
     color: rebeccapurple;
+    cursor: pointer;
+}
+
+#language-toggle{
+    display: none;
+}
+
+#labelSwitch{
+    padding: 1rem 5%;
+    font-size: 1.5rem;
     cursor: pointer;
 }
 

@@ -13,31 +13,37 @@
         <nav id="navbar">          
             <div class="logo">nico<span>Dev</span></div>             
             <ul class="nav-links">
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#proyectos">Proyectos</a></li>
-                <li><a href="#formacion">Formación</a></li>
-            </ul>
+                <li><a data-translate="navHome" href="#home">Home</a></li>
+                <li><a data-translate="navProjects" href="#projects">Projects</a></li>
+                <li><a data-translate="navFormation" href="#formation">Formation</a></li>
+            </ul>        
+        </div>
+        <div class="container-tools">
             <label for="toggle" id="labelToggle"><i class="fa-solid fa-moon"></i></label>
             <input type="checkbox" id="toggle">
             <script src="script.js"></script>
-            </div>
+    
+            <label for="language-toggle" id="labelSwitch"><i class="fa-solid fa-flag"></i></label>
+            <input type="checkbox" id="language-toggle">
+            
+        </div>
         </nav>
     </header>
     
     <main>
-        <section id="inicio" class="hero">
+        <section id="home" class="hero">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Fabricio Nicolás Carranza</h1>
-                    <h2>Desarrollador Web Backend</h2>
-                    <p>Apasionado por la programación y las nuevas tecnologías. Enfocado principalmente en el
-                        desarrollo de aplicaciones web escalables y aplicaciones de escritorio. Me gusta la idea de
-                        poder ofrecer soluciones a problemas reales de las personas.</p>
+                    <h2 data-translate="title">Backend Web Developer</h2>
+                    <p data-translate="aboutMe">Passionate about programming and new technologies.
+                        Primarily focused on deloping scalable web and desktop applications.
+                        I enjoy the idea of providing solutions to people's real-world problems.</p>
                         <div class="social-links">
                             <a href="https://github.com/nicodev404" target="_blank"><i class="fab fa-github"></i></a>
                             <a href="https://www.linkedin.com/in/nicodev404/" target="_blank"><i class="fab fa-linkedin"></i></a>
                         </div>
-                        <a href="#contacto" class="btn">Contáctame</a>
+                        <a data-translate="btnContact" href="#contact" class="btn">Contact me</a>
                 </div>
                 <div class="hero-image">
                     <img src="images/nicoDev404pfp.png" alt="profile image">
@@ -45,17 +51,19 @@
             </div>
         </section>
 
-        <section id="proyectos" class="projects">
-            <h2 class="section-title">Proyectos</h2>
+        <section id="projects" class="projects">
+            <h2 data-translate="projectsTitle" class="section-title">Projects</h2>
             <div class="projects-container">
                 <div class="project-card">
                     <div class="project-img">
                         <img src="images/project1.png" alt="project image">
                     </div>
                     <div class="project-info">
-                        <h3>Catálogo Web</h3>
-                        <p>Cuenta con un panel administrativo completo (ABM de artículos). También posee un sistema de autenticación por roles (usuario/admin)
-                        que garantiza que solo los administradores puedan realizar cambios. Incluye filtros dinámicos y búsqueda avanzada.</p>
+                        <h3 data-translate="project1Title">Web Catalog</h3>
+                        <p data-translate="project1Info">This online catalog features a comprehensive administrative panel (item management).
+                            It also includes a role-based authentication system (user/admin) ensuring that only administrators can make changes.
+                            Dynamic filters and advanced search capabilities are also included.
+                        </p>
                         <div class="project-tech">
                             <span>C#</span>
                             <span>SQL</span>
@@ -64,7 +72,7 @@
                             <span>CSS</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/nicodev404/Web-Catalog" target="_blank"><i class="fab fa-github"></i>Código</a>
+                            <a href="https://github.com/nicodev404/Web-Catalog" target="_blank"><i class="fab fa-github"></i><span data-translate="project1Code">Código</span></a>
                             <a href="" target="_blank"><i class="fas fa-link"></i>Demo</a>
                             <a href="http://nicodevwebcatalog.somee.com" target="_blank"><i class="fas fa-link"></i>App</a>
                         </div>
@@ -75,16 +83,17 @@
                         <img src="images/project2.png" alt="project image">
                     </div>
                     <div class="project-info">
-                        <h3>Catálogo (app de escritorio)</h3>
-                        <p>Permite la alta, baja y modificación de cualquier artículo que desees.
-                        También incluye filtros de búsqueda rápida y avanzada.</p>
+                        <h3 data-translate="project2Title">Catalog (desktop app)</h3>
+                        <p data-translate="project2Info">This desktop application allows you to add, delete, and modify any item you want.
+                            It also includes quick and advanced search filters.
+                        </p>
                         <div class="project-tech">
                             <span>C#</span>
                             <span>SQL</span>
                             <span>.NET</span>   
                         </div>
                         <div class="project-links">
-                            <a href="https://github.com/nicodev404/Catalog-manager" target="_blank"><i class="fab fa-github"></i>Código</a>
+                            <a href="https://github.com/nicodev404/Catalog-manager" target="_blank"><i class="fab fa-github"></i><span data-translate="project2Code">Código</span></a>
                             <a href="https://drive.google.com/file/d/1kwVIWvBE6HB6VXPyqXcVW4ufd0vvolpk/view?usp=drive_link" target="_blank"><i class="fas fa-link"></i>Demo</a>
                         </div>
                     </div>
@@ -92,21 +101,19 @@
             </div>
         </section>
 
-        <section id="formacion" class="formacion">
-            <h2 class="section-title">Formación</h2>
+        <section id="formation" class="formacion">
+            <h2 data-translate="formationsTitle" class="section-title">Formation</h2>
             <div class="timeline">
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <span class="date">Feb 2026</span>
-                        <h3>Curso C# Nivel 3 [WEB .NET]</h3>
+                        <h3 data-translate="course4Title">C# Level 3 Course [WEB .NET]</h3>
                         <h4>maxiprograma.com</h4>
-                        <p>
-                            Desarrollo de aplicaciones web utilizando C# y ASP.NET Core para crear
-                            sitios robustos y escalables.
+                        <p data-translate="course4Info">
+                            Web application development using C# and ASP.NET Core to create robust and scalable sites.
                         </p>
-                        <p>
-                            Implementación de controles personalizados en ASP.NET para mejorar la
-                            interacción en aplicaciones web.
+                        <p data-translate="course4Info2">
+                            Implementing custom controls in ASP.NET to improve interaction in web applications.
                         </p>
                         <ul class="skills">
                             <li>C#</li>
@@ -116,20 +123,20 @@
                             <li>CSS</li>
                         </ul>
                         <div class="timeline-links">
-                            <a href="" target="_blank"><i class="fas fa-link"></i>Certificado</a>
+                            <a href="" target="_blank"><i class="fas fa-link"></i><span data-translate="course4Certificate">Certificate</span></a>
                         </div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <span class="date">Abr 2025</span>
-                        <h3>Curso C# Nivel 2 [POO + .NET + SQL]</h3>
+                        <h3 data-translate="course3Title">C# Level 2 Course [OPO + .NET + SQL]</h3>
                         <h4>maxiprograma.com</h4>
-                        <p>
-                            Desarrollo de aplicaciones orientadas a objetos usando C# y .NET framework.
+                        <p data-translate="course3Info">
+                            Developing object-oriented applications using C# and the .NET framework.
                         </p>
-                        <p>
-                            Implementación de bases de datos SQL para manejo eficiente de datos.
+                        <p data-translate="course3Info2">
+                            Implementation of SQL databases for efficient data management.
                         </p>
                         <ul class="skills">
                             <li>C#</li>
@@ -137,69 +144,71 @@
                             <li>.NET</li>
                         </ul>
                         <div class="timeline-links">
-                            <a href="https://drive.google.com/file/d/1z7hHdU13cYRLBttn0wdmnElppQX7kB3a/view?usp=drive_link" target="_blank"><i class="fas fa-link"></i>Certificado</a>
+                            <a href="https://drive.google.com/file/d/1z7hHdU13cYRLBttn0wdmnElppQX7kB3a/view?usp=drive_link" target="_blank"><i class="fas fa-link"></i><span data-translate="course3Certificate">Certificate</span></a>
                         </div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <spa class="date">Nov 2024</spa>
-                        <h3>Curso C# Nivel 1</h3>
+                        <h3 data-translate="course2Title">C# Level 1 Course</h3>
                         <h4>maxiprograma.com</h4>
-                        <p>
-                            Introducción al lenguaje C#: sintaxis y estructuras básicas.
+                        <p data-translate="course2Info">
+                            Introduction to the C# language: syntax and basic structures.
                         </p>
-                        <p>
-                            Control de flujo: condicionales y bucles en programación C#.
+                        <p data-translate="course2Info2">
+                            Flow control: conditionals and loops in C# programming.
                         </p>
                         <ul class="skills">
                             <li>C#</li>
                         </ul>
                         <div class="timeline-links">
-                            <a href="https://drive.google.com/file/d/1njCovpZPHm6amwrFND39ZtuvQ88524Ub/view?usp=drive_link" target="_blank"><i class="fas fa-link"></i>Certificado</a>
+                            <a href="https://drive.google.com/file/d/1njCovpZPHm6amwrFND39ZtuvQ88524Ub/view?usp=drive_link" target="_blank"><i class="fas fa-link"></i><span data-translate="course2Certificate">Certificate</span></a>
                         </div>
                     </div>
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
                         <span class="date">Sep 2024</span>
-                        <h3>Curso fundamentos de la programación (nivel universidad)</h3>
+                        <h3 data-translate="course1Title">Programming Fundamentals Course (University Level)</h3>
                         <h4>maxiprograma.com</h4>
-                        <p>
-                            Conceptos fundamentales de estructuras de datos y variables.
+                        <p data-translate="course1Info">
+                            Fundamental concepts of data structures and variables.
                         </p>
-                        <p>
-                            Uso de estructuras de control de flujo: condicionales y bucles.
+                        <p data-translate="course1Info2">
+                            Use of flow control structures: conditionals and loops.
                         </p>
                         <div class="timeline-links">
-                            <a href="https://drive.google.com/file/d/1DUEdZbOTk2flyx8rUpH2KhYMIZBrrcsX/view?usp=drive_link" target="_blank"><i class="fas fa-link"></i>Certificado</a>
+                            <a href="https://drive.google.com/file/d/1DUEdZbOTk2flyx8rUpH2KhYMIZBrrcsX/view?usp=drive_link" target="_blank"><i class="fas fa-link"></i><span data-translate="course1Certificate">Certificate</span></a>
                         </div>
                     </div>
                 </div>                
             </div>
         </section>
 
-        <section id="contacto" class="contacto" action="https://formspree.io/f/mlgjwvkn" method="POST">
-            <h2 class="section-title">Contáctame</h2>
+        <section id="contact" class="contacto" action="https://formspree.io/f/mlgjwvkn" method="POST">
+            <h2 data-translate="contactTitle" class="section-title">Contact me</h2>
             <div class="contact-container">
-                <input type="text" class="contact-input" placeholder="Nombre" name="name">
-                <input type="email" class="contact-input" placeholder="Email" name="email">
-                <textarea class="contact-input contact-input-message" placeholder="Mensaje" name="message"></textarea> 
+                <input data-translate="placeholderName" type="text" class="contact-input" placeholder="Name" name="name">
+                <input data-translate="placeholderEmail" type="email" class="contact-input" placeholder="Email" name="email">
+                <textarea data-translate="placeholderMessage" class="contact-input contact-input-message" placeholder="Message" name="message"></textarea> 
 
-                <input type="submit" value="enviar" class="contact-cta">
+                <input type="submit" data-translate="btnSend" value="Send" class="contact-cta">
             </div>
         </section>
 
     </main>
-
+    
     <footer>
         <div class="footer-content">
-            <p>&copy; 2026 nicoDev - todos los derechos reservados</p>
+            <p data-translate="footer">&copy; 2026 nicoDev - all rights reserved</p>
             <div class="social-links">
-                            <a href="https://github.com/nicodev404" target="_blank"><i class="fab fa-github"></i></a>
-                            <a href="https://www.linkedin.com/in/nicodev404/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/nicodev404" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/nicodev404/" target="_blank"><i class="fab fa-linkedin"></i></a>
             </div>
         </div>
     </footer>
+
+    <script src="translations.js"></script>
 </body>
 </html>
