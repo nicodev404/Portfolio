@@ -8,7 +8,7 @@
     <script src="https://kit.fontawesome.com/dd6b71da10.js" crossorigin="anonymous"></script>
     <title>Document</title>
 </head>
-<body class="light-mode">
+<body>
     <header>
         <nav id="navbar">          
             <div class="logo">nico<span>Dev</span></div>             
@@ -19,13 +19,17 @@
             </ul>        
         </div>
         <div class="container-tools">
-            <label for="toggle" id="labelToggle"><i class="fa-solid fa-moon"></i></label>
+            <label for="toggle" id="labelToggle"><i class="fa-solid fa-sun"></i></label>
             <input type="checkbox" id="toggle">
             <script src="script.js"></script>
-    
-            <label for="language-toggle" id="labelSwitch"><i class="fa-solid fa-flag"></i></label>
-            <input type="checkbox" id="language-toggle">
-            
+            <div class="language-switch">
+                <input type="checkbox" id="language-toggle" checked style="display:none;">
+                <span class="lang-text">ES</span>
+                <label for="language-toggle" class="switch-container">
+                    <span class="slider"></span>
+                </label>
+                <span class="lang-text">EN</span>
+            </div> 
         </div>
         </nav>
     </header>
@@ -37,7 +41,7 @@
                     <h1>Fabricio Nicolás Carranza</h1>
                     <h2 data-translate="title">Backend Web Developer</h2>
                     <p data-translate="aboutMe">Passionate about programming and new technologies.
-                        Primarily focused on deloping scalable web and desktop applications.
+                        Primarily focused on developing scalable web and desktop applications.
                         I enjoy the idea of providing solutions to people's real-world problems.</p>
                         <div class="social-links">
                             <a href="https://github.com/nicodev404" target="_blank"><i class="fab fa-github"></i></a>
@@ -65,11 +69,11 @@
                             Dynamic filters and advanced search capabilities are also included.
                         </p>
                         <div class="project-tech">
-                            <span>C#</span>
-                            <span>SQL</span>
-                            <span>ASP.NET</span>
-                            <span>HTML</span>
-                            <span>CSS</span>
+                            <span class="tech-pill">C#</span>
+                            <span class="tech-pill">SQL</span>
+                            <span class="tech-pill">ASP.NET</span>
+                            <span class="tech-pill">HTML</span>
+                            <span class="tech-pill">CSS</span>
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/nicodev404/Web-Catalog" target="_blank"><i class="fab fa-github"></i><span data-translate="project1Code">Código</span></a>
@@ -88,9 +92,9 @@
                             It also includes quick and advanced search filters.
                         </p>
                         <div class="project-tech">
-                            <span>C#</span>
-                            <span>SQL</span>
-                            <span>.NET</span>   
+                            <span class="tech-pill">C#</span>
+                            <span class="tech-pill">SQL</span>
+                            <span class="tech-pill">.NET</span>   
                         </div>
                         <div class="project-links">
                             <a href="https://github.com/nicodev404/Catalog-manager" target="_blank"><i class="fab fa-github"></i><span data-translate="project2Code">Código</span></a>
@@ -116,11 +120,11 @@
                             Implementing custom controls in ASP.NET to improve interaction in web applications.
                         </p>
                         <ul class="skills">
-                            <li>C#</li>
-                            <li>ASP.NET</li>
-                            <li>SQL</li>
-                            <li>HTML</li>
-                            <li>CSS</li>
+                            <li class="tech-pill">C#</li>
+                            <li class="tech-pill">ASP.NET</li>
+                            <li class="tech-pill">SQL</li>
+                            <li class="tech-pill">HTML</li>
+                            <li class="tech-pill">CSS</li>
                         </ul>
                         <div class="timeline-links">
                             <a href="" target="_blank"><i class="fas fa-link"></i><span data-translate="course4Certificate">Certificate</span></a>
@@ -129,7 +133,7 @@
                 </div>
                 <div class="timeline-item">
                     <div class="timeline-content">
-                        <span class="date">Abr 2025</span>
+                        <span data-translate="course3Date" class="date">Apr 2025</span>
                         <h3 data-translate="course3Title">C# Level 2 Course [OPO + .NET + SQL]</h3>
                         <h4>maxiprograma.com</h4>
                         <p data-translate="course3Info">
@@ -139,9 +143,9 @@
                             Implementation of SQL databases for efficient data management.
                         </p>
                         <ul class="skills">
-                            <li>C#</li>
-                            <li>SQL</li>
-                            <li>.NET</li>
+                            <li class="tech-pill">C#</li>
+                            <li class="tech-pill">SQL</li>
+                            <li class="tech-pill">.NET</li>
                         </ul>
                         <div class="timeline-links">
                             <a href="https://drive.google.com/file/d/1z7hHdU13cYRLBttn0wdmnElppQX7kB3a/view?usp=drive_link" target="_blank"><i class="fas fa-link"></i><span data-translate="course3Certificate">Certificate</span></a>
@@ -160,7 +164,7 @@
                             Flow control: conditionals and loops in C# programming.
                         </p>
                         <ul class="skills">
-                            <li>C#</li>
+                            <li class="tech-pill">C#</li>
                         </ul>
                         <div class="timeline-links">
                             <a href="https://drive.google.com/file/d/1njCovpZPHm6amwrFND39ZtuvQ88524Ub/view?usp=drive_link" target="_blank"><i class="fas fa-link"></i><span data-translate="course2Certificate">Certificate</span></a>
