@@ -87,12 +87,13 @@ function changeLanguage(lang){
     const elementsToTranslate = document.querySelectorAll('[data-translate]');
     const translationSet = translations[lang];
 
+    
     if(!translationSet) return;
 
     elementsToTranslate.forEach(element => {
         const key = element.getAttribute('data-translate');
         const translation = translationSet[key];
-
+        
         if(translation){
             if(element.tagName === 'INPUT' && (element.type === 'submit' || element.type === 'button')){
                 element.value = translation;
@@ -104,6 +105,9 @@ function changeLanguage(lang){
                 element.textContent = translation;
             }
             
+        }
+        if (window.updateValidationMessages) {
+            window.updateValidationMessages(lang); 
         }
     });
 
