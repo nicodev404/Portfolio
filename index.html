@@ -11,26 +11,29 @@
 <body>
     <header>
         <nav id="navbar">          
-            <div class="logo">nico<span>Dev</span></div>             
-            <ul class="nav-links">
-                <li><a data-translate="navHome" href="#home">Home</a></li>
-                <li><a data-translate="navProjects" href="#projects">Projects</a></li>
-                <li><a data-translate="navFormation" href="#formation">Formation</a></li>
-            </ul>        
-        </div>
-        <div class="container-tools">
-            <label for="toggle" id="labelToggle"><i class="fa-solid fa-sun"></i></label>
-            <input type="checkbox" id="toggle">
-            <script src="script.js"></script>
-            <div class="language-switch">
-                <input type="checkbox" id="language-toggle" checked style="display:none;">
-                <span class="lang-text">ES</span>
-                <label for="language-toggle" class="switch-container">
-                    <span class="slider"></span>
-                </label>
-                <span class="lang-text">EN</span>
-            </div> 
-        </div>
+            <div class="logo">nico<span>Dev</span></div>
+                <ul class="nav-links">
+                    <li><a data-translate="navHome" href="#home">Home</a></li>
+                    <li><a data-translate="navProjects" href="#projects">Projects</a></li>
+                    <li><a data-translate="navFormation" href="#formation">Formation</a></li>
+                </ul>         
+                <button class="hamburger" id="btn-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>             
+                <div class="container-tools">
+                    <label for="toggle" id="labelToggle"><i class="fa-solid fa-sun"></i></label>
+                    <input type="checkbox" id="toggle">
+                    <div class="language-switch">
+                        <input type="checkbox" id="language-toggle" checked style="display:none;">
+                        <span class="lang-text">ES</span>
+                        <label for="language-toggle" class="switch-container">
+                            <span class="slider"></span>
+                        </label>
+                            <span class="lang-text">EN</span>
+                    </div>
+                </div>
         </nav>
     </header>
     
@@ -55,7 +58,7 @@
                 </div>
             </div>
         </section>
-
+        
         <section id="projects" class="projects">
             <h2 data-translate="projectsTitle" class="section-title">Projects</h2>
             <div class="projects-container">
@@ -105,7 +108,7 @@
                 </div>
             </div>
         </section>
-
+        
         <section id="formation" class="formacion">
             <h2 data-translate="formationsTitle" class="section-title">Formation</h2>
             <div class="timeline">
@@ -190,10 +193,10 @@
                 </div>                
             </div>
         </section>
-
+        
         <section id="contact" class="contacto">
             <form id="my-form" action="https://formspree.io/f/xkozrkqn" method="POST">
-
+                
                 <h2 data-translate="contactTitle" class="section-title">Contact me</h2>
                 <div class="contact-container">
                     <input data-translate="placeholderName" type="text" class="contact-input" placeholder="Name" name="name" required>
@@ -205,7 +208,7 @@
                 </div>
             </form>
         </section>
-
+        
     </main>
     
     <footer>
@@ -217,6 +220,8 @@
             </div>
         </div>
     </footer>
+    <script src="script.js"></script>
+    <script src="button.js"></script>
     <script src="contact.js"></script>
     <script src="translations.js"></script>
 </body>
