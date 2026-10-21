@@ -84,6 +84,7 @@ header{
     align-items: center;
     padding: 1rem 5%;
     max-width: 1400px;
+    max-height: 88px;
     margin: 0 auto;
 }
 
