@@ -5,10 +5,10 @@
      document.body.classList.toggle('light-mode');
      if(checked){
          labelToggle.innerHTML = '<i class="fa-solid fa-moon"></i>';
-         labelToggle.style.color = "rebeccapurple";
+         labelToggle.style.color = "#8B5CF6";
      }
      else{
          labelToggle.innerHTML = '<i class="fa-solid fa-sun"></i>';
-         labelToggle.style.color = "yellow";
+         labelToggle.style.color = "white";
      }
 })

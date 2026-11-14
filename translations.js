@@ -89,6 +89,7 @@ function changeLanguage(lang){
 
     
     if(!translationSet) return;
+    document.documentElement.lang = lang;
 
     elementsToTranslate.forEach(element => {
         const key = element.getAttribute('data-translate');
@@ -106,10 +107,10 @@ function changeLanguage(lang){
             }
             
         }
-        if (window.updateValidationMessages) {
-            window.updateValidationMessages(lang); 
-        }
     });
+    if (window.updateValidationMessages) {
+    window.updateValidationMessages(lang);
+    }
 
     localStorage.setItem('preferredLang', lang);
 }

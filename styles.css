@@ -1,36 +1,38 @@
 :root{
-    --bg-header: rgba(10, 10, 10, 0.9);
-    --bg-color: #0B0E14;
-    --bg-secondary: #0a0a0a;
-    --primary-color: #D4AF37;
-    --primary-text: #F1F5F9;
+    --bg-header: rgba(10, 10, 16, 0.9);
+    --bg-color: #0D1117;
+    --bg-secondary: #11131C;
+    --primary-color: #8B5CF6;
+    --primary-text: #F8FAFC;
     --secondary-text: #94A3B8;
-    --card-bg: #151921;
-    --border-color: #333333;
-    --bg-contact: #1A1C1E;
-    --bg-input: #0F1113;
-    --border-input: #2D2F31;
-    --pill-text-color: #D4AF37;
+    --card-bg: #161B22;
+    --border-color: #303045;
+    --bg-contact: #131722;
+    --bg-input: #0F1320;
+    --border-input: #38334F;
+    --pill-text-color: #A78BFA;
     --pill-text-hover: #0B0E14;
-    --transition: all .3s ease;
-    --shadow: 0 10px 30px rgba(212, 175, 55, .5);
+    --transition: all 0.3s ease;
+    --shadow: 0 10px 30px rgba(139, 92, 246, 0.25);
+    --shadow-white: 0 4px 20px rgba(0, 0, 0, 0.25);
 }
 
 body.light-mode{
     --bg-header: rgb(253, 252, 249, 0.9);
-    --bg-color: #FDFCF9;
-    --bg-secondary: #EAE7E1;
-    --primary-color: #D4AF37;
+    --bg-color: #F8FAFC;
+    --bg-secondary: #F1F0F8;
+    --primary-color: #8B5CF6;
     --primary-text: #1A1C1E;
-    --secondary-text: #525252;
+    --secondary-text: #52525B;
     --card-bg: #FFFFFF;
-    --border-color: #EAE7E1;
-    --bg-contact: #FDFCF9;
+    --border-color: #E4DFF0;
+    --bg-contact: #F5F3FF;
     --bg-input: #FFFFFF;
-    --pill-text-color: #525252;
-    --pill-text-hover: #1A1C1E;
-    --transition: all .3s ease;
-    --shadow: 0 10px 30px rgba(0,0,0,0.03);
+    --border-input: #D8D2E5;
+    --pill-text-color: #7C3AED;
+    --pill-text-hover: #FFFFFF;
+    --transition: all 0.3s ease;
+    --shadow: 0 10px 30px rgba(0,0,0,0.06);
     --shadow-white: 0 10px 30px rgba(0,0,0,0.03);  
 }
 
@@ -141,7 +143,7 @@ header{
 #labelToggle{
     padding: 1rem 5%;
     font-size: 1.5rem;
-    color: yellow;
+    color: white;
     cursor: pointer;
 }
 
@@ -241,16 +243,17 @@ section{
 .btn{
     display: inline-block;
     background-color: var(--primary-color);
-    color: #0F1113;
+    color: #FFFFFF;
     padding: .8rem 1.5rem;
     border-radius: 5px;
     font-weight: 600;
+    cursor: pointer;
     transition: var(--transition);
     border: none;
 }
 
 .btn:hover{
-    background-color: #F1C40F;
+    background-color: #A78BFA;
     transform: translateY(-3px);
     box-shadow: var(--shadow);
 }
@@ -331,13 +334,13 @@ section{
     object-fit: cover;
     border-radius: 50%;
     border: 1px solid var(--primary-color);
-    box-shadow: 0 0 25px rgba(212, 175, 55, .5);
+    box-shadow: 0 0 25px rgba(139, 92, 246, 0.5);
     transition: var(--transition);
 }
 
 .hero-image img:hover{
     transform: sacel(1.03);
-    box-shadow: 0 0 30px rgba(212, 175, 55, .5);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.7);
 }
 
 .timeline{
@@ -377,7 +380,7 @@ section{
 
 .timeline-item:hover::before{
     transform: scale(1.1);
-    box-shadow: 0 0 15px rgba(212, 175, 55, 0.8);
+    box-shadow: 0 0 15px rgba(139, 92, 246, 0.8);
     background-color: #FFFFFF;
 }
 
@@ -390,16 +393,16 @@ section{
     box-shadow: var(--shadow-white);
 }
 
-.timeline-content:hover{
-    background-color: rgba(212, 175, 55, 0.03);
-    border-left: 3px solid #D4AF37; 
-    transform: translateX(5px);
+ .timeline-content:hover{
+    background-color: rgba(139, 92, 246, 0.06);
+    border-left: 3px solid var(--primary-color); 
+    transform: translateX(5px);  
 } 
 
 .date{
     display: inline-block;
     padding: .3rem .8rem;
-    background-color: rgba(212, 175, 55, 0.2);
+    background-color: rgba(139, 92, 246, 0.18);
     color: var(--primary-text);
     border-radius: 5px;
     font-size: .9rem;
@@ -559,7 +562,7 @@ section{
     max-width: 450px;
     border-radius: 10px;
     padding: 40px;
-    border: 1px solid rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.2);
     margin: auto;
     display: grid;
     gap: 1em;
@@ -575,14 +578,14 @@ section{
     padding: 15px;
     color: var(--primary-text);
     font-family: inherit;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     margin-bottom: 20px;
 }
 
 .contact-input:focus, .contact-input-message:focus{
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.2);
+    box-shadow: 0 0 10px rgba(139, 92, 246, 0.25);
 }
 
 .contact-input-message{
@@ -593,7 +596,7 @@ section{
 
 .contact-cta{
     background-color: var(--primary-color);
-    color: #1A1C1E;
+    color: #FFFFFF;
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1px;
@@ -601,14 +604,14 @@ section{
     padding: 15px 30px;
     border-radius: 8px;
     cursor: pointer;
-    transition: all 0.3s ease;
+    transition: var(--transition);
     width: 100%;
 }
 
 .contact-cta:hover{
-    background-color: #F1C40F; 
+    background-color: #A78BFA; 
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+    box-shadow: var(--shadow);
 }
 
 #my-form-status {
@@ -618,11 +621,64 @@ section{
   transition: opacity 0.3s ease;
 }
 
+#my-form-status.is-error {
+    color: #F87171;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    text-align: center;
+}
+
 .form-status-success {
   color: #4caf50;
   background-color: rgba(76, 175, 80, 0.1);
   padding: 10px;
   border-radius: 4px;
+}
+
+.contact-input.input-error {
+    border: 1px solid #ef4444 !important;
+    background-color: rgba(239, 68, 68, 0.06);
+}
+
+.contact-input.input-error:focus {
+    border-color: #ef4444 !important;
+    outline: none;
+    box-shadow: 0 0 0 1px rgba(239, 68, 68, 0.15);
+}
+
+.field-error {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 6px;
+    margin-bottom: 0;
+    color: #ef4444;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+.field-error::before {
+    content: "!";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 11px;
+    height: 11px;
+    min-width: 11px;
+    border: 1.5px solid #ef4444;
+    border-radius: 50%;
+    font-size: 8px;
+    font-weight: bold;
+}
+
+.contact-input.input-error,
+.contact-input-message.input-error {
+    margin-bottom: 0;
+}
+
+.field-error {
+    margin-top: -10px;
+    margin-bottom: 0;
 }
 
 footer{

@@ -1,7 +1,16 @@
 var form = document.getElementById("my-form");
+form.noValidate = true;
 
 async function handleSubmit(event) {
   event.preventDefault();
+  const isValid = Array.from(fields)
+  .map(input => validateField(input))
+  .every(Boolean);
+
+  if (!isValid) {
+    form.querySelector('.input-error')?.focus();
+    return;
+  }
   var status = document.getElementById("my-form-status");
   var data = new FormData(event.target);
 
@@ -57,37 +66,80 @@ async function handleSubmit(event) {
 
 form.addEventListener("submit", handleSubmit);
 
+const fields = form.querySelectorAll(
+    'input:not([type="submit"]):not([type="hidden"]), textarea'
+);
 
+function getValidationMessage(input) {
+    const isEn = document.documentElement.lang === 'en';
 
-window.updateValidationMessages = function(lang) {
-  const titleElement = document.querySelector('[data-translate="contactTitle"]');
-  const currentLang = lang || (titleElement && titleElement.innerText.includes("Contact") ? 'en' : 'es');
-  
-  const isEn = currentLang === 'en';
-  const inputs = document.querySelectorAll('.contact-input');
+    input.setCustomValidity("");
 
-  inputs.forEach(input => {
-    const msgEn = "Please fill out this field.";
-    const msgEs = "Por favor, completa este campo.";
-    const selectedMsg = isEn ? msgEn : msgEs;
-
-    if (input.validationMessage !== "") {
-      input.setCustomValidity(selectedMsg);
-    } else {
-      input.setCustomValidity(""); 
+    if (input.validity.valueMissing) {
+        return isEn
+            ? "Please fill out this field."
+            : "Por favor, completa este campo.";
     }
 
-    input.oninvalid = function(e) {
-      e.target.setCustomValidity(""); 
-      if (!e.target.validity.valid) {
-        e.target.setCustomValidity(selectedMsg);
-      }
-    };
+    if (input.type === 'email' && input.value.trim() !== '' &&
+    !/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(input.value.trim())){
+    return isEn
+        ? "Please enter a valid email address."
+        : "Por favor, ingresa un correo electrónico válido.";
+    }
 
-    input.oninput = function(e) {
-      e.target.setCustomValidity("");
-    };
-  });
+  return "";
+}
+
+function validateField(input) {
+    const message = getValidationMessage(input);
+
+    let error = input.nextElementSibling;
+
+    if (!error || !error.classList.contains('field-error')) {
+        error = null;
+    }
+
+    if (message) {
+        input.classList.add('input-error');
+        input.setAttribute('aria-invalid', 'true');
+
+        if (!error) {
+            error = document.createElement('small');
+            error.className = 'field-error';
+            input.insertAdjacentElement('afterend', error);
+        }
+
+        error.textContent = message;
+        return false;
+    }
+
+    input.classList.remove('input-error');
+    input.removeAttribute('aria-invalid');
+
+    if (error) {
+        error.remove();
+    }
+
+    return true;
+}
+
+fields.forEach(input => {
+    input.addEventListener('blur', () => {
+        validateField(input);
+    });
+
+    input.addEventListener('input', () => {
+        if (input.classList.contains('input-error')) {
+            validateField(input);
+        }
+    });
+});
+
+window.updateValidationMessages = function() {
+    fields.forEach(input => {
+        if (input.classList.contains('input-error')) {
+            validateField(input);
+        }
+    });
 };
-
-window.addEventListener('load', window.updateValidationMessages);
