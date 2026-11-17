@@ -430,6 +430,11 @@ section{
     opacity: 1;
 }
 
+.timeline-links a i{
+    margin-right: 6px;
+    font-size: 15px;
+}
+
 .skills{
     display: flex;
     flex-wrap: wrap;
@@ -462,8 +467,10 @@ section{
 
 .projects-container{
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    max-width: 1130px;
+    margin: 0 auto;
 }
 
 .project-card{
@@ -486,6 +493,14 @@ section{
     opacity: 1;
 }
 
+.project-card:hover .project-details-content li{
+    color: var(--primary-text);
+}
+
+.project-card:hover .project-info h3{
+    color: var(--primary-color);
+}
+
 .project-img{
     overflow: hidden;
 }
@@ -495,8 +510,90 @@ section{
     width: 100%;
 }
 
-.project-card:hover .projects-img img{
-    transform: scale(1.05);
+.project-carousel {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+    background: #10141c;
+}
+
+.project-carousel .carousel-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.project-carousel .carousel-slide.active {
+    opacity: 1;
+}
+
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(0, 0, 0, 0.65);
+    color: white;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.carousel-prev {
+    left: 12px;
+}
+
+.carousel-next {
+    right: 12px;
+}
+
+.project-carousel:hover .carousel-btn,
+.project-carousel:focus-within .carousel-btn {
+    opacity: 1;
+}
+
+.carousel-btn:hover {
+    background: var(--primary-color, #9564ff);
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 12px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex;
+    gap: 8px;
+}
+
+.carousel-dot {
+    width: 8px;
+    height: 8px;
+    padding: 0;
+    border: none;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.45);
+    cursor: pointer;
+}
+
+.carousel-dot.active {
+    background: var(--primary-color, #9564ff);
+    width: 18px;
+    border-radius: 10px;
 }
 
 .project-info{
@@ -541,6 +638,92 @@ section{
     transform: translateY(-2px);
 }
 
+.project-details {
+    margin: 20px 0;
+    border-top: 1px solid #38383e;
+    padding-top: 15px;
+}
+
+.project-details summary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    width: fit-content;
+
+    color: var(--primary-color, #9564ff);
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+}
+
+.project-details summary::-webkit-details-marker {
+    display: none;
+}
+
+.project-details summary::after {
+    content: "";
+    display: inline-block;
+
+    width: 7px;
+    height: 7px;
+
+    border-right: 2px solid currentColor;
+    border-bottom: 2px solid currentColor;
+
+    transform: rotate(45deg);
+    transition: transform 0.25s ease;
+}
+
+.project-details[open] summary::after {
+    transform: rotate(225deg);
+}
+
+.project-details-content {
+    padding-top: 18px;
+}
+
+.project-details-content h4 {
+    font-size: 15px;
+    margin-bottom: 12px;
+    color: #f4f4f5;
+}
+
+.project-details-content ul {
+    list-style-type: disc;
+    list-style-position: outside;
+    padding-left: 24px;
+    margin: 0;
+}
+
+.project-details-content li {
+    display: list-item;
+    list-style-type: disc;
+    color: #a1a1aa;
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 8px;
+}
+
+.project-details-content li::marker {
+    color: var(--primary-color, #9564ff);
+    font-size: 14px;
+}
+
+body.light-mode .project-details {
+    border-color: #e4e4e7;
+}
+
+body.light-mode .project-details-content h4 {
+    color: #18181b;
+}
+
+body.light-mode .project-details-content li {
+    color: #52525b;
+}
+
 .project-links{
     margin-top: 20px;
     display: flex;
@@ -551,6 +734,11 @@ section{
     font-size: .9rem;
     color: var(--secondary-text);
     transition: var(--transition);
+}
+
+.project-links a i {
+    margin-right: 6px;
+    font-size: 15px;
 }
 
 .project-links a:hover{
@@ -699,6 +887,147 @@ footer{
     display: none;
 } 
 
+.skills-section {
+    padding: 80px 20px;
+}
+
+.skills-container {
+    max-width: 1130px;
+    margin: 0 auto;
+}
+
+.skills-container p{
+    color: var(--primary-color);
+}
+
+.skills-title {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.skills-description {
+    text-align: center;
+    color: #a1a1aa;
+    margin-bottom: 35px;
+}
+
+.skills-category {
+    font-size: 1.2rem;
+    color: var(--primary-text);
+    margin: 0px 0 20px;
+    text-align: center;
+}
+
+.skill-card .devicon-github-original {
+    color: #fff;
+}
+
+body.light-mode .skill-card .devicon-github-original {
+    color: #18181b;
+}
+
+.skill-card span {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--primary-text);
+    cursor: default;
+    user-select: none;
+}
+
+.skill-card:hover {
+    border-color: var(--primary-color, #9564ff);
+    transform: translateY(-5px);
+
+    box-shadow: 0 8px 25px
+        rgba(149, 100, 255, 0.15);
+} 
+
+.skills-panels {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: start;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 150px);
+    gap: 12px;
+    justify-content: center;
+}
+
+.skills-grid .skill-card:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+    width: 150px;
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 150px;
+    height: 95px;
+    padding: 10px;
+    gap: 8px;
+
+    min-width: 0;
+    box-sizing: border-box;
+
+    background: #18181b;
+    border: 1px solid #333;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+.skill-card i {
+    font-size: 30px;
+} 
+
+.skill-card span {
+    font-size: 0.85rem;
+}
+
+.skills-category {
+        text-align: center;
+}
+
+.skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 150px));
+        justify-content: center;
+        gap: 12px;
+}
+
+.skill-card {
+        width: 100%;
+        height: 95px;
+}
+
+body.light-mode .skill-card {
+    background: #ffffff;
+    border: 1px solid #e4e4e7;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.04);
+}
+
+body.light-mode .skill-card span {
+    color: #27272a;
+}
+
+body.light-mode .skill-card:hover {
+    border-color: var(--primary-color, #9564ff);
+    box-shadow: 0 8px 20px rgba(149, 100, 255, 0.12);
+}
+
+@media (max-width: 1100px) {
+    .skills-panels {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
 @media (max-width: 768px) {
     header{
         position: static;
@@ -746,5 +1075,53 @@ footer{
     }
     .nav-links.active {
         display: flex;
+    }
+    .skills-section {
+        padding: 60px 20px;
+    }
+    .skill-card {
+        padding: 20px 10px;
+    }
+    .skill-card i {
+        font-size: 38px;
+    }
+    .skills-panels {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 150px));
+        justify-content: center;
+        gap: 12px;
+    }
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+    .project-carousel {
+        height: 210px;
+    }
+}
+
+@media (max-width:600px) {
+    .skills-grid .skill-card:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        justify-self: center;
+        width: min(150px, 100%);
+    }
+}
+
+@media (max-width: 400px) {
+    .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .skill-card {
+        width: 100%;
+    }
+}
+
+@media (hover: none) {
+    .carousel-btn {
+        opacity: 1;
     }
 }

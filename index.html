@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nicodev404-Portfolio</title>
-    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css"> 
     <script src="https://kit.fontawesome.com/dd6b71da10.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
 </head>
 <body>
     <header>
@@ -14,10 +15,12 @@
             <div class="logo">nico<span>Dev</span></div>
                 <ul class="nav-links">
                     <li><a data-translate="navHome" href="#home">Home</a></li>
+                    <li><a data-translate="navSkills" href="#skills">Skills</a></li>
                     <li><a data-translate="navProjects" href="#projects">Projects</a></li>
                     <li><a data-translate="navFormation" href="#formation">Formation</a></li>
                 </ul>         
                 <button class="hamburger" id="btn-menu">
+                    <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -60,18 +63,144 @@
             </div>
         </section>
         
+        <section id="skills" class="skills-section">
+            <div class="skills-container">
+                <h2 data-translate="skillsTitle" class="section-title">Skills</h2>
+                <p data-translate="skillsDescription" class="skills-description">
+                Technologies and tools I work with.
+                </p>
+
+                <div class="skills-panels">
+
+            <div class="skills-group">
+
+                <h3 class="skills-category">Backend</h3>
+
+                <div class="skills-grid">
+
+                    <div class="skill-card">
+                        <i class="devicon-csharp-plain colored"></i>
+                        <span>C#</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="devicon-dotnetcore-plain colored"></i>
+                        <span>.NET</span>
+                    </div>
+
+                </div>
+
+            </div>
+            
+            <div class="skills-group">
+
+                <h3 class="skills-category">Frontend</h3>
+
+                <div class="skills-grid">
+
+                    <div class="skill-card">
+                        <i class="devicon-html5-plain colored"></i>
+                        <span>HTML5</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="devicon-css3-plain colored"></i>
+                        <span>CSS3</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="devicon-javascript-plain colored"></i>
+                        <span>JavaScript</span>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="skills-group">
+
+                <h3 data-translate="skillsData" class="skills-category">
+                    Database & Tools
+                </h3>
+
+                <div class="skills-grid">
+
+                    <div class="skill-card">
+                        <i class="devicon-microsoftsqlserver-plain colored"></i>
+                        <span>SQL Server</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="devicon-git-plain colored"></i>
+                        <span>Git</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="devicon-github-original"></i>
+                        <span>GitHub</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="devicon-docker-plain colored"></i>
+                        <span>Docker</span>
+                    </div>
+
+                    <div class="skill-card">
+                        <i class="devicon-postman-plain colored"></i>
+                        <span>Postman</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>            
+    </section>
+
         <section id="projects" class="projects">
             <h2 data-translate="projectsTitle" class="section-title">Projects</h2>
             <div class="projects-container">
                 <div class="project-card">
-                    <div class="project-img">
-                        <img src="images/project1.png" alt="project image">
+                    <div class="project-img project-carousel">
+                        <img src="images/project1-1.png"
+                        class="carousel-slide active"
+                        data-translate-alt="project1img1" alt="Web Catalog - Main page">
+
+                        <img src="images/project1-2.png"
+                        class="carousel-slide"
+                        data-translate-alt="project1img2" alt="Web Catalog - Product details">
+
+                        <img src="images/project1-3.png"
+                        class="carousel-slide"
+                        data-translate-alt="project1img3" alt="Web Catalog - Product management">
+
+                        <img src="images/project1-4.png"
+                        class="carousel-slide"
+                        data-translate-alt="project1img4" alt="Web Catalog - Control panel">
+
+                        <img src="images/project1-5.png"
+                        class="carousel-slide"
+                        data-translate-alt="project1img5" alt="Web Catalog - Search filters">
+
+                        <img src="images/project1-6.png"
+                        class="carousel-slide"
+                        data-translate-alt="project1img6" alt="Web Catalog - My profile section">
+
+                        <button class="carousel-btn carousel-prev"
+                        type="button" aria-label="Previous image">
+                        &#10094;
+                        </button>
+
+                        <button class="carousel-btn carousel-next"
+                        type="button" aria-label="Next image">
+                        &#10095;
+                        </button>
+                        <div class="carousel-dots"></div>
                     </div>
                     <div class="project-info">
                         <h3 data-translate="project1Title">Web Catalog</h3>
-                        <p data-translate="project1Info">This online catalog features a comprehensive administrative panel (item management).
-                            It also includes a role-based authentication system (user/admin) ensuring that only administrators can make changes.
-                            Dynamic filters and advanced search capabilities are also included.
+                        <p data-translate="project1Info"> Web-based product catalog developed with C#,
+                            ASP.NET Web Forms and SQL Server. Features
+                            product management, advanced search,
+                            user authentication and role-based
+                            administration, following a layered architecture.
                         </p>
                         <div class="project-tech">
                             <span class="tech-pill">ASP.NET</span>
@@ -81,30 +210,133 @@
                             <span class="tech-pill">CSS</span>
                             <span class="tech-pill">JavaScript</span>
                         </div>
+
+                        <details class="project-details">
+
+                            <summary data-translate="projectDetailsButton">
+                                View details
+                            </summary>
+
+                            <div class="project-details-content">
+
+                                <h4 data-translate="projectDetailsHeading">
+                                    Key Features
+                                </h4>
+
+                                <ul>
+                                    <li data-translate="project1Detail1">
+                                        Product management with CRUD operations.
+                                    </li>
+
+                                    <li data-translate="project1Detail2">
+                                        User authentication and role-based authorization.
+                                    </li>
+
+                                    <li data-translate="project1Detail3">
+                                        Advanced product search and dynamic filtering.
+                                    </li>
+
+                                    <li data-translate="project1Detail4">
+                                        SQL database integration using stored procedures.
+                                    </li>
+
+                                    <li data-translate="project1Detail5">
+                                        Layered architecture: View, Control and Model.
+                                    </li>
+
+                                    <li data-translate="project1Detail6">
+                                        Responsive interface built with HTML, CSS and Bootstrap.
+                                    </li>
+                                </ul>
+
+                            </div>
+
+                        </details>
                         <div class="project-links">
                             <a href="https://github.com/nicodev404/Web-Catalog" target="_blank"><i class="fab fa-github"></i><span data-translate="project1Code">Código</span></a>
-                            <a href="resources/demo-video/web-catalog.mp4" target="_blank"><i class="fas fa-link"></i>Demo</a>
-                            <a href="http://nicodevwebcatalog.somee.com" target="_blank"><i class="fas fa-link"></i>App</a>
+                            <a href="resources/demo-video/web-catalog.mp4" target="_blank"><i class="fas fa-play-circle"></i>Demo</a>
+                            <a href="http://nicodevwebcatalog.somee.com" target="_blank"><i class="fas fa-globe"></i>App</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card">
-                    <div class="project-img">
-                        <img src="images/project2.png" alt="project image">
+                    <div class="project-img project-carousel">
+                        <img src="images/project2-1.png"
+                        class="carousel-slide active"
+                        data-translate-alt="project2img1" alt="Catalog desktop - Main page">
+
+                        <img src="images/project2-2.png"
+                        class="carousel-slide"
+                        data-translate-alt="project2img2" alt="Catalog desktop - Search filter">
+
+                        <img src="images/project2-3.png"
+                        class="carousel-slide"
+                        data-translate-alt="project2img3" alt="Catalog desktop - Product management">
+
+                        <img src="images/project2-4.png"
+                        class="carousel-slide"
+                        data-translate-alt="project2img4" alt="Catalog desktop - Advanced filter">
+
+                        <button class="carousel-btn carousel-prev"
+                        type="button" aria-label="Previous image">
+                        &#10094;
+                        </button>
+
+                        <button class="carousel-btn carousel-next"
+                        type="button" aria-label="Next image">
+                        &#10095;
+                        </button>
+                        <div class="carousel-dots"></div>
                     </div>
                     <div class="project-info">
                         <h3 data-translate="project2Title">Catalog (desktop app)</h3>
-                        <p data-translate="project2Info">This desktop application allows you to add, delete, and modify any item you want.
-                            It also includes quick and advanced search filters.
+                        <p data-translate="project2Info">Desktop inventory management application developed with C#, .NET and SQL Server. 
+                            Features CRUD operations, product management, 
+                            and quick and advanced search filters, with a modular project structure.
                         </p>
                         <div class="project-tech">
                             <span class="tech-pill">.NET</span>
                             <span class="tech-pill">C#</span>
                             <span class="tech-pill">SQL</span>   
                         </div>
+                        <details class="project-details">
+
+                        <summary data-translate="projectDetailsButton">
+                            View details
+                        </summary>
+
+                        <div class="project-details-content">
+
+                            <h4 data-translate="projectDetailsHeading">
+                                Key Features
+                            </h4>
+
+                            <ul>
+                                <li data-translate="project2Detail1">
+                                    Product management with CRUD operations.
+                                </li>
+
+                                <li data-translate="project2Detail2">
+                                    Quick search and advanced filtering.
+                                </li>
+
+                                <li data-translate="project2Detail3">
+                                    SQL Server database integration.
+                                </li>
+
+                                <li data-translate="project2Detail4">
+                                    Desktop interface developed with Windows Forms.
+                                </li>
+
+                                <li data-translate="project2Detail5">
+                                    Layered architecture: View, Control and Model.
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
                         <div class="project-links">
                             <a href="https://github.com/nicodev404/Catalog-manager" target="_blank"><i class="fab fa-github"></i><span data-translate="project2Code">Código</span></a>
-                            <a href="resources/demo-video/catalog-manager.mp4" target="_blank"><i class="fas fa-link"></i>Demo</a>
+                            <a href="resources/demo-video/catalog-manager.mp4" target="_blank"><i class="fas fa-play-circle"></i>Demo</a>
                         </div>
                     </div>
                 </div>
@@ -134,7 +366,7 @@
                             <li class="tech-pill">JavaScript</li>
                         </ul>
                         <div class="timeline-links">
-                            <a href="resources/certificate/csharp-level-3.pdf" target="_blank"><i class="fas fa-link"></i><span data-translate="course4Certificate">Certificate</span></a>
+                            <a href="resources/certificate/csharp-level-3.pdf" target="_blank"><i class="fas fa-graduation-cap"></i><span data-translate="course4Certificate">Certificate</span></a>
                         </div>
                     </div>
                 </div>
@@ -155,7 +387,7 @@
                             <li class="tech-pill">SQL</li>
                         </ul>
                         <div class="timeline-links">
-                            <a href="resources/certificate/csharp-level-2.pdf" target="_blank"><i class="fas fa-link"></i><span data-translate="course3Certificate">Certificate</span></a>
+                            <a href="resources/certificate/csharp-level-2.pdf" target="_blank"><i class="fas fa-graduation-cap"></i><span data-translate="course3Certificate">Certificate</span></a>
                         </div>
                     </div>
                 </div>
@@ -174,7 +406,7 @@
                             <li class="tech-pill">C#</li>
                         </ul>
                         <div class="timeline-links">
-                            <a href="resources/certificate/csharp-level-1.pdf" target="_blank"><i class="fas fa-link"></i><span data-translate="course2Certificate">Certificate</span></a>
+                            <a href="resources/certificate/csharp-level-1.pdf" target="_blank"><i class="fas fa-graduation-cap"></i><span data-translate="course2Certificate">Certificate</span></a>
                         </div>
                     </div>
                 </div>
@@ -190,7 +422,7 @@
                             Use of flow control structures: conditionals and loops.
                         </p>
                         <div class="timeline-links">
-                            <a href="resources/certificate/csharp-programming-fundamentals.pdf" target="_blank"><i class="fas fa-link"></i><span data-translate="course1Certificate">Certificate</span></a>
+                            <a href="resources/certificate/csharp-programming-fundamentals.pdf" target="_blank"><i class="fas fa-graduation-cap"></i><span data-translate="course1Certificate">Certificate</span></a>
                         </div>
                     </div>
                 </div>                
@@ -216,7 +448,7 @@
     
     <footer>
         <div class="footer-content">
-            <p data-translate="footer">&copy; 2026 nicoDev - all rights reserved</p>
+            <p data-translate="footer">&copy; 2026 nicoDev - all rights reserved.</p>
             <div class="social-links">
                 <a href="https://github.com/nicodev404" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="https://www.linkedin.com/in/nicodev404/" target="_blank"><i class="fab fa-linkedin"></i></a>
